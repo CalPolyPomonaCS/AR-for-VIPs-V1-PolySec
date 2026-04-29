@@ -50,7 +50,7 @@ public class CameraManager : MonoBehaviour
         {
             foreach (Resolution r in cameraResolutions)
             {
-                if (r.width == 1280 || r.height == 720)
+                if (r.width == 1280 && r.height == 720)
                 {
                     cameraResolution = r;
                     break;
@@ -175,7 +175,7 @@ public class CameraManager : MonoBehaviour
         cameraAudioSource.Play();
         */
         //Use google voice
-        this.gameObject.transform.GetComponent<TextToSpeechGoogle>().playTextGoogle("Capturing image. Analyzing...");
+        GetComponent<TextToSpeechManager>().SpeakText("Capturing image. Analyzing...");
         Debug.Log("CM: Sound effect played. TakePhoto Async activated.");
     }
     

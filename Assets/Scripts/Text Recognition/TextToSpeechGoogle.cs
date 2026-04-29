@@ -33,7 +33,7 @@ public class TextToSpeechGoogle : MonoBehaviour
     private AudioSource goAudioSource;
    
 
-    string url = "https://texttospeech.googleapis.com/v1beta1/text:synthesize?&key=AIzaSyAOViwmf8Y4KGusoMEVhpmSUi6MXkDjGus";
+    string url = "https://texttospeech.googleapis.com/v1beta1/text:synthesize?&key=AIzaSyA0jF36oYMB3LmvFKZ00KPddYEEaNTBM9k";
 
     // Start is called before the first frame update
     void Start()

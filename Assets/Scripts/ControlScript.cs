@@ -91,7 +91,7 @@ public class ControlScript : MonoBehaviour {
         Debug.Log("Gesture Recognizer Initialized");
 
         //Voice confirmation that interface is ready.
-        TextManager.GetComponent<TextToSpeechGoogle>().playTextGoogle("Ready to assist.");
+        TextManager.GetComponent<TextToSpeechManager>().SpeakText("Ready to assist.");
 
     }
 

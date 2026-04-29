@@ -25,8 +25,17 @@ public class TextReco : MonoBehaviour {
         byte[] content = Encoding.UTF8.GetBytes(json);
         Debug.Log("TR: JSON string created.");
 
+        if (json.Length < 2000)
+        {
+            Debug.Log("TR: json = " + json);
+        }
+        else
+        {
+            Debug.Log("TR: json starts with = " + json.Substring(0, 500));
+        }
+
         // Enter the url to your google vision api account here:
-        string url = "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBTZXi8lZ9CAkgETGYBb3G9A7mzylWMmLQ";  //Manish's API
+        string url = "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAdLeJLJ_EsXfAswjSA9vcqgbQqs2nfSGc";  //Manish's API
         //string url = "https://vision.googleapis.com/v1/images:annotate?key=ebd483e2c4d642c9cec634bc508fe095c557f289/"; //Rajan's API
 
         // Request to API
@@ -73,16 +82,11 @@ public class TextReco : MonoBehaviour {
 
         else
         {
-            Debug.Log("TR: www error found: " + www.error);
-            if (www.text.Length <= 480)
-            {
-                Debug.Log("TR: www.text: " + www.text);
-            }
-            else
-            {
-                Debug.Log("TR: www.text length = " + www.text.Length);
-            }
-            
+            Debug.LogError("TR: www error found: " + www.error);
+            Debug.LogError("TR www.text: " + www.text);
+            Debug.Log("TR: image length = " + image.Length);
+            Debug.Log("TR: base64 length = " + base64Image.Length);
+            Debug.Log("TR: json length = " + json.Length);
         }
 
 
